@@ -46,7 +46,7 @@
         app:startIconDrawable="@drawable/ic_username">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/usernameEditText"
+            android:id="@+id/usernameRegisterEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="18"
@@ -104,32 +104,32 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="88dp"
+        android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSignIn"
-        app:layout_constraintVertical_bias="0.029">
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignIn">
 
         <TextView
             android:id="@+id/twAccount"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center|end"
+            android:text="@string/textAccount"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            android:text="@string/textAccount" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/textButton3"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:onClick="onButtonSignUpClick"
             android:text="@string/signUp"
-            android:textSize="20sp"
             android:textAlignment="textStart"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
