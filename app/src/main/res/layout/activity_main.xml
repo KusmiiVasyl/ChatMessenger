@@ -12,16 +12,15 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:alpha="0.2"
+        android:alpha="0.3"
         android:scaleType="centerCrop"
         android:src="@drawable/main_chat_city"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/main_chat_city" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/usernameInputLayout"
@@ -30,15 +29,15 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
-        android:hint="Username"
-        android:textColorHint="@color/orange"
+        android:hint="@string/usernameHint"
+        android:textColorHint="@color/dark_orange"
         app:boxBackgroundColor="@color/light_grey"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="@color/orange"
+        app:boxStrokeColor="@color/light_orange"
         app:counterEnabled="true"
         app:counterMaxLength="18"
-        app:counterTextColor="@color/orange"
-        app:hintTextColor="@color/orange"
+        app:counterTextColor="@color/dark_orange"
+        app:hintTextColor="@color/dark_orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.0"
@@ -51,8 +50,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="18"
+            android:textSize="20sp"
             android:inputType="textPersonName"
-            android:textColor="@color/orange"
+            android:textColor="@color/dark_orange"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,16 +63,15 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
-        android:hint="Password"
-        android:textColorHint="@color/orange"
+        android:hint="@string/passwordHint"
+        android:textColorHint="@color/dark_orange"
         app:boxBackgroundColor="@color/light_grey"
         app:boxBackgroundMode="outline"
-        app:boxStrokeColor="@color/orange"
-        app:counterEnabled="true"
+        app:boxStrokeColor="@color/light_orange"
         app:counterMaxLength="18"
-        app:counterTextColor="@color/orange"
+        app:counterTextColor="@color/dark_orange"
         app:endIconMode="password_toggle"
-        app:hintTextColor="@color/orange"
+        app:hintTextColor="@color/dark_orange"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernameInputLayout"
@@ -83,10 +82,57 @@
             android:layout_width="match_parent"
             android:layout_height="59dp"
             android:inputType="textPassword"
+            android:textSize="20sp"
             android:maxLength="18"
-            android:textColor="@color/orange"
+            android:textColor="@color/dark_orange"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <Button
+        android:id="@+id/buttonSignIn"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/signIn"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="88dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignIn"
+        app:layout_constraintVertical_bias="0.029">
+
+        <TextView
+            android:id="@+id/twAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center|end"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="@string/textAccount" />
+
+        <Button
+            android:id="@+id/textButton3"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/signUp"
+            android:textSize="20sp"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ChatMessenger</string>
+
+    // For SIGN IN Activity
+    <string name="usernameHint">Username</string>
+    <string name="passwordHint">Password</string>
+    <string name="signIn">SIGN IN</string>
+    <string name="signUp">SIGN UP</string>
+    <string name="textAccount">Don\'t have account? </string>
 </resources>
