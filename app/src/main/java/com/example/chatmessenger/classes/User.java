@@ -1,7 +1,6 @@
 package com.example.chatmessenger.classes;
 
 import java.util.ArrayList;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
@@ -68,7 +67,8 @@ public class User {
             return "User with this email already exists!";
         if(!isValidEmail(user.getEmail()))
             return "Email is not valid!";
-        return "TO DO"; //TO DO
+        users.add(user);
+        return "User added";
     }
 
     public static boolean isValidEmail(String email) {

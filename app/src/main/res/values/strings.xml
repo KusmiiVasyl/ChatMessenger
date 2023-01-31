@@ -7,6 +7,7 @@
     <string name="signIn">SIGN IN</string>
     <string name="signUp">SIGN UP</string>
     <string name="textAccount">Don\'t have account? </string>
+    <string name="textMessage1">User not found! \nPlease try again or register! </string>
 
     // For REGISTER Activity
     <string name="textRegistration">Registration</string>
