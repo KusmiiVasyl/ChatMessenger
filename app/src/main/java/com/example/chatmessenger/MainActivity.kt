@@ -1,24 +1,19 @@
 package com.example.chatmessenger
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import com.example.chatmessenger.classes.User
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.usernameRegisterEditText
-import kotlinx.android.synthetic.main.activity_registration.*
-import kotlinx.coroutines.Delay
-import java.util.Timer
+import java.io.Serializable
 
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
-    val users = arrayListOf<User>(
+    var users = arrayListOf<User>(
         User("Username1", "Qwerty1", "username1@gmail.com"),
         User("Username2", "Qwerty2", "username2@gmail.com"),
         User("Username3", "Qwerty3", "username3@gmail.com"),
@@ -27,18 +22,27 @@ class MainActivity : AppCompatActivity() {
         User("Username6", "Qwerty6", "username6@gmail.com"),
         User("Username7", "Qwerty7", "username7@gmail.com")
     )
+    var user: User? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
     }
 
-    fun onButtonSignUpClick(view: View) {
-        startActivity(Intent(this, RegistrationActivity::class.java))
+    override fun onStop() {
+        usernameRegisterEditText.text = null
+        passwordEditText.text = null
+        super.onStop()
     }
 
-    fun onButtonSignInClick(view: View) {
+    fun onClickButtonSignUp(view: View) {
+        startActivity(
+            Intent(this, RegistrationActivity::class.java)
+                .putExtra("DataUsers", users as Serializable)
+        )
+    }
+
+    fun onClickButtonSignIn(view: View) {
         val username = usernameRegisterEditText.text.toString()
         val password = passwordEditText.text.toString()
         if (User.isUserExist(username, password, users)) {
@@ -46,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             usernameRegisterEditText.text = null
             passwordEditText.text = null
-            messageShow(layoutMessage_1)
+            messageShow(message_1)
         }
     }
 
@@ -59,9 +63,10 @@ class MainActivity : AppCompatActivity() {
             override fun onTick(millisUntilFinished: Long) {
                 count++
                 if (count == 3) {
-                    layoutMessage_1.animate().alpha(0.0f).duration = 3500
+                    message_1.animate().alpha(0.0f).duration = 3500
                 }
             }
+
             override fun onFinish() {
                 view.visibility = View.GONE
                 view.alpha = 1.0f

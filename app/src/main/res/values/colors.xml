@@ -14,4 +14,5 @@
     <color name="light_grey">#95FFFFFF</color>
     <color name="colorMessage">#F5040404</color>
     <color name="colorBoxMessage">#CDFF0000</color>
+    <color name="light_red">#CDFB8A8A</color>
 </resources>

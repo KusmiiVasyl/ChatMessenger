@@ -9,7 +9,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutMessage_1"
+        android:id="@+id/message_1"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginStart="24dp"
@@ -124,7 +124,7 @@
         android:layout_marginTop="40dp"
         android:text="@string/signIn"
         android:textSize="20sp"
-        android:onClick="onButtonSignInClick"
+        android:onClick="onClickButtonSignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />
@@ -155,7 +155,7 @@
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:onClick="onButtonSignUpClick"
+            android:onClick="onClickButtonSignUp"
             android:text="@string/signUp"
             android:textAlignment="textStart"
             android:textSize="20sp"

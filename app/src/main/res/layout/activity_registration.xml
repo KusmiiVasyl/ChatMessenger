@@ -29,13 +29,28 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/twRegistration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="80dp"
             android:text="@string/textRegistration"
             android:textColor="@color/light_orange"
             android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/message_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:padding="10dp"
+            android:text="@string/textMessage1"
+            android:textColor="@color/colorMessage"
+            android:background="@color/colorBoxMessage"
+            android:visibility="gone"
+            android:textSize="20sp"
+            android:textStyle="bold|italic" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -165,7 +180,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="59dp"
                     android:inputType="textEmailAddress"
-                    android:maxLength="18"
+                    android:maxLength="40"
                     android:textColor="@color/dark_orange"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -181,6 +196,7 @@
             android:layout_marginTop="40dp"
             android:text="@string/textRegister"
             android:textSize="20sp"
+            android:onClick="onClickButtonRegister"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout" />

@@ -1,10 +1,11 @@
 package com.example.chatmessenger.classes;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 
-public class User {
+public class User implements Serializable {
     private String username;
     private String password;
     private String email;
@@ -42,7 +43,7 @@ public class User {
     public static boolean isUserExist(String username, String password, ArrayList<User> users) {
         int countUsers = users.size();
         for (int i = 0; i < countUsers; i++) {
-            if (users.get(i).getUsername().equals(username) &&
+            if (users.get(i).getUsername().equals(username) ||
                     users.get(i).getPassword().equals(password))
                 return true;
         }
@@ -58,17 +59,17 @@ public class User {
         return false;
     }
 
-    public static String registerUser(User user, String confirmPassword, ArrayList<User> users){
-        if(user.getPassword().length() < 5 || !user.getPassword().equals(confirmPassword))
-            return "The password is not correct!";
-        if(User.isUserExist(user.getUsername(), user.getPassword(), users))
-            return "Username or password already exists!";
-        if(User.isUserEmailExist(user.getEmail(), users))
-            return "User with this email already exists!";
-        if(!isValidEmail(user.getEmail()))
-            return "Email is not valid!";
+    public static int registerUser(User user, String confirmPassword, ArrayList<User> users) {
+        if (user.getPassword().length() < 5 || !user.getPassword().equals(confirmPassword))
+            return 1; //"The password is not correct!"
+        if (User.isUserExist(user.getUsername(), user.getPassword(), users))
+            return 2; //"Username or password already exists!"
+        if (User.isUserEmailExist(user.getEmail(), users))
+            return 3; //"User with this email already exists!"
+        if (!isValidEmail(user.getEmail()))
+            return 4; //"Email is not valid!"
         users.add(user);
-        return "User added";
+        return 5; //"User added"
     }
 
     public static boolean isValidEmail(String email) {
