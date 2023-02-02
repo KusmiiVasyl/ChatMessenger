@@ -46,7 +46,8 @@ class MainActivity : AppCompatActivity() {
         val username = usernameRegisterEditText.text.toString()
         val password = passwordEditText.text.toString()
         if (User.isUserExist(username, password, users)) {
-            startActivity(Intent(this, ChatActivity::class.java))
+            startActivity(Intent(this, ChatActivity::class.java)
+                .putExtra("DataUser", username))
         } else {
             usernameRegisterEditText.text = null
             passwordEditText.text = null

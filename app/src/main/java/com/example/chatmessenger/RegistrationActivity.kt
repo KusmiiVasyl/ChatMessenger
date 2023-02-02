@@ -9,7 +9,6 @@ import com.example.chatmessenger.classes.User
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.usernameRegisterEditText
 import kotlinx.android.synthetic.main.activity_registration.*
-import java.io.Serializable
 
 
 @Suppress("DEPRECATION")
@@ -63,7 +62,8 @@ class RegistrationActivity : AppCompatActivity() {
                 showErrorMessage(getString(R.string.textMessage4))
             }
             5 -> {
-                startActivity(Intent(this, ChatActivity::class.java))
+                startActivity(Intent(this, ChatActivity::class.java)
+                    .putExtra("DataUser", user.username))
             }
         }
     }
